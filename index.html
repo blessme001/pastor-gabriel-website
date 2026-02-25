@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pastor Gabriel Abimbola Adegboye</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato&display=swap" rel="stylesheet">
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body { font-family: 'Lato', sans-serif; color: #333; line-height: 1.6; }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* Global Styles */
+    section { padding: 80px 20px; max-width: 1200px; margin: auto; }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; margin-bottom: 20px; }
+    p { margin-bottom: 15px; }
+
+    /* Hero */
+    .hero {
+      background: url('hero-placeholder.jpg') no-repeat center center/cover;
+      color: #fff;
+      text-align: center;
+      padding: 150px 20px;
+    }
+    .hero h1 { font-size: 48px; margin-bottom: 10px; }
+    .hero p { font-size: 20px; margin-bottom: 30px; }
+    .hero button {
+      padding: 12px 30px;
+      margin: 0 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background: #b38b5c;
+      color: #fff;
+      transition: 0.3s;
+    }
+    .hero button:hover { background: #9b7048; }
+
+    /* About Section */
+    .about { display: flex; flex-wrap: wrap; align-items: center; gap: 40px; }
+    .about img { flex: 1 1 300px; max-width: 100%; border-radius: 10px; }
+    .about .text { flex: 2 1 500px; }
+
+    /* Two-column section */
+    .two-column { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; }
+    .two-column img { flex: 1 1 300px; border-radius: 10px; max-width: 100%; }
+    .two-column .text { flex: 2 1 500px; }
+
+    /* Word for the Nation */
+    .word-nation { background: #f5f5f5; border-radius: 10px; padding: 40px; }
+
+    /* Books */
+    .books { display: flex; flex-wrap: wrap; gap: 20px; }
+    .book { flex: 1 1 200px; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 3px 6px rgba(0,0,0,0.1); text-align: center; }
+    .book img { width: 100%; border-radius: 5px; margin-bottom: 10px; }
+
+    /* Messages */
+    .messages { display: flex; flex-wrap: wrap; gap: 20px; }
+    .message { flex: 1 1 300px; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 3px 6px rgba(0,0,0,0.1); text-align: center; }
+
+    /* Newsletter */
+    .newsletter { text-align: center; background: #b38b5c; color: #fff; border-radius: 10px; padding: 40px 20px; }
+    .newsletter input[type="text"], .newsletter input[type="email"] {
+      padding: 10px; margin: 10px 5px; border-radius: 5px; border: none; width: 200px; max-width: 80%;
+    }
+    .newsletter button {
+      padding: 12px 30px; border: none; border-radius: 5px; cursor: pointer; background: #fff; color: #b38b5c; font-weight: bold; transition: 0.3s;
+    }
+    .newsletter button:hover { background: #eee; }
+
+    /* Contact */
+    .contact { background: #f5f5f5; border-radius: 10px; padding: 40px; text-align: center; }
+
+    /* Responsive */
+    @media(max-width: 900px) {
+      .about, .two-column { flex-direction: column; text-align: center; }
+      .about .text, .two-column .text { flex: unset; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Pastor Gabriel Abimbola Adegboye</h1>
+    <p>Founder – Worksword of God Church | Preacher • Teacher • Prophet</p>
+    <button>Watch Messages</button>
+    <button>Join Newsletter</button>
+  </section>
+
+  <!-- About Section -->
+  <section class="about">
+    <img src="pastor-placeholder.jpg" alt="Pastor Gabriel">
+    <div class="text">
+      <h2>About Pastor Gabriel</h2>
+      <p>Pastor Gabriel Abimbola Adegboye is a visionary spiritual leader and Founder of Worksword of God Church. Called to preach, teach, and provide prophetic guidance, he has dedicated his life to inspiring individuals and communities toward spiritual growth, righteousness, and national transformation.</p>
+    </div>
+  </section>
+
+  <!-- Ministry Philosophy -->
+  <section class="two-column">
+    <div class="text">
+      <h2>Ministry Philosophy</h2>
+      <p>Pastor Gabriel believes that real change — in individuals, families, communities, and nations — begins with spiritual awakening and divine alignment. His ministry blends:</p>
+      <ul>
+        <li>Sound Biblical Doctrine</li>
+        <li>Prophetic Insight</li>
+        <li>Practical Teachings for Daily Living</li>
+        <li>National & Social Transformation</li>
+      </ul>
+    </div>
+    <img src="ministry-placeholder.jpg" alt="Ministry">
+  </section>
+
+  <!-- Word for the Nation -->
+  <section class="word-nation">
+    <h2>Word for the Nation</h2>
+    <p>Pastor Gabriel’s prophetic messages are rooted in God’s guidance for both individuals and the nation. Highlights include:</p>
+    <ul>
+      <li><strong>Spiritual Warfare:</strong> True transformation requires prayer, fasting, and reliance on God’s power.</li>
+      <li><strong>Call to Righteous Living:</strong> Uphold moral integrity and live in the fear of God.</li>
+      <li><strong>National Insight & Guidance:</strong> Divine wisdom for leadership, security, and societal growth.</li>
+    </ul>
+    <p><em>"Many of Nigeria’s challenges require spiritual solutions alongside practical ones. We must seek God’s guidance for lasting peace and prosperity."</em></p>
+  </section>
+
+  <!-- Books Section -->
+  <section class="books">
+    <h2>Books & Publications</h2>
+    <div class="book">
+      <img src="book-placeholder.jpg" alt="Book 1">
+      <h3>The Emergence of Asiwaju Bola Tinubu</h3>
+    </div>
+    <div class="book">
+      <img src="book-placeholder.jpg" alt="Book 2">
+      <h3>Africans in Diaspora</h3>
+    </div>
+    <div class="book">
+      <img src="book-placeholder.jpg" alt="Book 3">
+      <h3>Nigeria: Indivisibility of a Nation</h3>
+    </div>
+  </section>
+
+  <!-- Messages Section -->
+  <section class="messages">
+    <h2>Messages & Sermons</h2>
+    <div class="message">
+      <h3>Walking in Faith</h3>
+      <p>Video/audio placeholder</p>
+    </div>
+    <div class="message">
+      <h3>Divine Guidance</h3>
+      <p>Video/audio placeholder</p>
+    </div>
+    <div class="message">
+      <h3>Prayer & Righteousness</h3>
+      <p>Video/audio placeholder</p>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter">
+    <h2>Subscribe to the Newsletter</h2>
+    <p>Stay connected with Pastor Gabriel Abimbola Adegboye. Receive weekly messages, teachings, and spiritual guidance directly in your inbox.</p>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact">
+    <h2>Contact & Worksword of God Church</h2>
+    <p><strong>Church Name:</strong> Worksword of God Church</p>
+    <p><strong>Founder:</strong> Pastor Gabriel Abimbola Adegboye</p>
+    <p><strong>Address:</strong> [To be provided]</p>
+    <p><strong>Email / Phone:</strong> [To be provided]</p>
+    <p><strong>Social Media:</strong> [Links here]</p>
+  </section>
+
+</body>
+</html>
