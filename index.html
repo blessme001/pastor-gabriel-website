@@ -1,19 +1,45 @@
-<!-- Hero Section -->
-<section class="hero">
-  <img class="profile" src="hero-placeholder.jpg" alt="Pastor Gabriel">
-  <h1 style="font-weight: 900;">Pastor Gabriel Abimbola Adegboye</h1>
-  <p style="font-weight: 700;">Founder – Worksword of God Church | Preacher • Teacher • Prophet</p>
-  <div class="button-container">
-    <button>Watch Messages</button>
-    <button>Join Newsletter</button>
-  </div>
-</section>
+<script>
+  const slides = ['slide1.jpg','slide2.jpg','slide3.jpg','slide4.jpg','slide5.jpg'];
+  let slideIndex = 0;
+  const hero = document.querySelector('.hero');
 
-<!-- About Section -->
-<section class="about">
-  <img src="pastor-placeholder.jpg" alt="Pastor Gabriel">
-  <div class="text">
-    <h2 style="font-weight: 800;">About Pastor Gabriel</h2>
-    <p>Pastor Gabriel Abimbola Adegboye is a visionary spiritual leader and Founder of Worksword of God Church. Called to preach, teach, and provide prophetic guidance, he has dedicated his life to inspiring individuals and communities toward spiritual growth, righteousness, and national transformation.</p>
-  </div>
-</section>
+  // Preload images for smoother transitions
+  slides.forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
+
+  function changeBackground() {
+    // Create a temporary overlay for fade effect
+    const fadeDiv = document.createElement('div');
+    fadeDiv.style.position = 'absolute';
+    fadeDiv.style.top = 0;
+    fadeDiv.style.left = 0;
+    fadeDiv.style.width = '100%';
+    fadeDiv.style.height = '100%';
+    fadeDiv.style.backgroundImage = `url('${slides[slideIndex]}')`;
+    fadeDiv.style.backgroundSize = 'cover';
+    fadeDiv.style.backgroundPosition = 'center';
+    fadeDiv.style.backgroundRepeat = 'no-repeat';
+    fadeDiv.style.opacity = 0;
+    fadeDiv.style.transition = 'opacity 1.5s ease-in-out';
+    fadeDiv.style.zIndex = -1;
+    hero.appendChild(fadeDiv);
+
+    // Trigger fade-in
+    requestAnimationFrame(() => {
+      fadeDiv.style.opacity = 1;
+    });
+
+    // Remove old background after fade
+    setTimeout(() => {
+      hero.style.backgroundImage = `url('${slides[slideIndex]}')`;
+      hero.removeChild(fadeDiv);
+    }, 1500);
+
+    slideIndex = (slideIndex + 1) % slides.length;
+  }
+
+  setInterval(changeBackground, 4000);
+  window.onload = changeBackground;
+</script>
