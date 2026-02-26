@@ -38,7 +38,7 @@
       background-position: center;
       background-repeat: no-repeat;
       z-index: -1;
-      filter: brightness(50%) blur(8px); /* blurred background */
+      filter: brightness(50%) blur(9px); /* Increased blur to 9px */
       transition: background-image 1s ease-in-out;
     }
 
@@ -225,7 +225,6 @@
     const slides = ['slide1.jpg','slide2.jpg','slide3.jpg','slide4.jpg','slide5.jpg'];
     let slideIndex = 0;
     const hero = document.querySelector('.hero');
-    const heroBg = document.querySelector('.hero::before');
 
     function changeBackground() {
       hero.style.backgroundImage = `url('${slides[slideIndex]}')`;
