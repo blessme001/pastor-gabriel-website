@@ -20,6 +20,7 @@
       align-items: center;
       gap: 40px;
       margin-bottom: 50px;
+      position: relative;
     }
 
     .hero-content {
@@ -29,6 +30,7 @@
       align-items: center;
       text-align: center;
       position: relative;
+      z-index: 2;
     }
 
     .hero-content img.profile {
@@ -41,12 +43,14 @@
       font-size: 28px;
       font-weight: 900;
       margin-bottom: 10px;
+      color: #fff;
     }
 
     .hero-content p {
       font-size: 16px;
       font-weight: 600;
       margin-bottom: 20px;
+      color: #fff;
     }
 
     .button-container {
@@ -73,6 +77,7 @@
     .about-text {
       flex: 2 1 500px;
       font-weight: 600;
+      color: #fff;
     }
 
     /* Background slideshow */
@@ -82,8 +87,9 @@
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: -1;
+      z-index: 1;
       overflow: hidden;
+      filter: blur(5px);
     }
 
     .background-slideshow img {
@@ -95,7 +101,7 @@
       left: 0;
       opacity: 0;
       transition: opacity 1s ease-in-out;
-      filter: brightness(60%);
+      filter: brightness(50%);
     }
 
     .background-slideshow img.active {
@@ -219,7 +225,7 @@
     let currentSlide = 0;
 
     function showNextSlide() {
-      slides.forEach((img, i) => img.classList.remove('active'));
+      slides.forEach((img) => img.classList.remove('active'));
       slides[currentSlide].classList.add('active');
       currentSlide = (currentSlide + 1) % slides.length;
     }
