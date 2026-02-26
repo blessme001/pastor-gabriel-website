@@ -13,25 +13,22 @@
     h1, h2, h3 { font-family: 'Playfair Display', serif; margin-bottom: 20px; }
     p { margin-bottom: 15px; }
 
-    /* Hero Section with Background Slideshow */
+    /* Hero Section with static blurred background */
     .hero {
       position: relative;
       text-align: center;
       color: #fff;
-      height: 100vh;
+      height: 80vh; /* slightly shorter */
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       overflow: hidden;
       padding: 0;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      transition: background-image 1s ease-in-out;
+      background: url('hero-background.jpg') center/cover no-repeat;
     }
 
-    /* Blur overlay for background slideshow */
+    /* Blur overlay for background */
     .hero::before {
       content: '';
       position: absolute;
@@ -67,7 +64,6 @@
       font-weight: bold;
     }
 
-    /* Buttons side by side */
     .hero .button-container {
       display: flex;
       gap: 20px;
@@ -87,7 +83,7 @@
     }
     .hero button:hover { background: #9b7048; }
 
-    /* About Section (side by side with image) */
+    /* About Section */
     .about {
       display: flex;
       flex-wrap: wrap;
@@ -105,9 +101,7 @@
     .about .text {
       flex: 2 1 500px;
     }
-    .about h2, .about p {
-      font-weight: bold;
-    }
+    .about h2, .about p { font-weight: bold; }
 
     /* Word for the Nation */
     .word-nation { background: #f5f5f5; border-radius: 10px; padding: 40px; margin-bottom: 50px; }
@@ -141,7 +135,7 @@
 </head>
 <body>
 
-  <!-- Hero Section with Background Slideshow -->
+  <!-- Hero Section -->
   <section class="hero">
     <img class="profile" src="hero-placeholder.jpg" alt="Pastor Gabriel">
     <h1>Pastor Gabriel Abimbola Adegboye</h1>
@@ -215,21 +209,6 @@
     <p>Email: info@workswordofgodchurch.org</p>
     <p>Phone: +234XXXXXXXXXX</p>
   </section>
-
-  <!-- Background Slideshow JS -->
-  <script>
-    const slides = ['slide1.jpg','slide2.jpg','slide3.jpg','slide4.jpg','slide5.jpg'];
-    let slideIndex = 0;
-    const hero = document.querySelector('.hero');
-
-    function changeBackground() {
-      hero.style.backgroundImage = `url('${slides[slideIndex]}')`;
-      slideIndex = (slideIndex + 1) % slides.length;
-    }
-
-    setInterval(changeBackground, 4000);
-    window.onload = changeBackground;
-  </script>
 
 </body>
 </html>
