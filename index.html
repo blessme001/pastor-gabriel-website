@@ -8,7 +8,6 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Lato', sans-serif; color: #333; line-height: 1.6; }
-    a { text-decoration: none; color: inherit; }
     section { padding: 80px 20px; max-width: 1200px; margin: auto; }
     h1, h2, h3 { font-family: 'Playfair Display', serif; margin-bottom: 20px; }
     p { margin-bottom: 15px; }
@@ -35,20 +34,21 @@
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background-size: contain; /* keeps full image visible */
+      background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       z-index: -1;
-      filter: brightness(50%) blur(8px); /* blur slideshow */
-      transition: background-image 1s ease-in-out;
+      filter: brightness(30%) blur(15px);
+      transition: background-image 1s ease-in-out, filter 1s ease-in-out;
     }
 
+    /* Hero placeholder image and text */
     .hero img.profile {
       max-width: 180px;
       border-radius: 10px;
       margin-bottom: 20px;
       z-index: 1;
-      filter: brightness(100%); /* clear placeholder image */
+      filter: brightness(100%);
     }
 
     .hero h1 { font-size: 36px; margin-bottom: 10px; z-index: 1; font-weight: bold; }
@@ -177,13 +177,25 @@
   </section>
 
   <script>
-    const slides = ['slide1.jpg','slide2.jpg','slide3.jpg','slide4.jpg','slide5.jpg'];
+    const slides = [
+      {url:'slide1.jpg', blur:15, brightness:30},
+      {url:'slide2.jpg', blur:18, brightness:28},
+      {url:'slide3.jpg', blur:16, brightness:32},
+      {url:'slide4.jpg', blur:17, brightness:29},
+      {url:'slide5.jpg', blur:15, brightness:30}
+    ];
+
     let slideIndex = 0;
+    const heroBefore = document.querySelector('.hero::before'); // pseudo-element cannot be selected directly
     const hero = document.querySelector('.hero');
 
     function changeBackground() {
-      hero.style.setProperty('--bg-image', `url('${slides[slideIndex]}')`);
-      hero.style.backgroundImage = `url('${slides[slideIndex]}')`;
+      const slide = slides[slideIndex];
+      hero.style.setProperty('--bg-image', `url('${slide.url}')`);
+      hero.style.backgroundImage = `url('${slide.url}')`;
+      hero.style.filter = `brightness(${slide.brightness}%)`; // optional: can dynamically adjust
+      hero.style.setProperty('transition', 'filter 1s ease-in-out');
+      hero.style.setProperty('backdrop-filter', `blur(${slide.blur}px)`); // blur effect
       slideIndex = (slideIndex + 1) % slides.length;
     }
 
