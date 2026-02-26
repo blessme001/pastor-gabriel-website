@@ -9,226 +9,188 @@
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-font-family:'Lato',sans-serif;
-line-height:1.6;
-color:#333;
+body {
+  font-family: 'Lato', sans-serif;
+  line-height: 1.6;
+  color: #333;
 }
 
-section{
-max-width:1100px;
-margin:auto;
-padding:60px 20px;
+section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
 }
 
-h1,h2,h3{
-font-family:'Playfair Display',serif;
-margin-bottom:15px;
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 20px;
 }
 
-p{
-margin-bottom:15px;
+p {
+  margin-bottom: 15px;
 }
 
+/* HERO */
 
-/* HERO SECTION */
-
-.hero{
-text-align:center;
-background:#111;
-color:white;
-height:50vh;
-min-height:320px;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-padding:30px 20px;
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+  background: #222;
+  color: white;
+  border-bottom: 4px solid #b38b5c;
 }
 
-.hero img{
-width:160px;
-border-radius:10px;
-margin-bottom:15px;
+.hero img {
+  width: 180px;
+  border-radius: 10px;
+  margin-bottom: 15px;
 }
 
-.hero h1{
-font-size:34px;
+.hero h1 {
+  font-size: 32px;
 }
 
-.hero p{
-font-size:16px;
-font-weight:bold;
-margin-bottom:20px;
+.hero p {
+  font-size: 16px;
+  margin-bottom: 20px;
 }
 
-.hero-buttons{
-display:flex;
-gap:15px;
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
 
-.hero button{
-padding:10px 20px;
-border:none;
-background:#b38b5c;
-color:white;
-font-weight:bold;
-border-radius:5px;
-cursor:pointer;
+button {
+  padding: 10px 25px;
+  border: none;
+  background: #b38b5c;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.hero button:hover{
-background:#9b7048;
+button:hover {
+  background: #9c744c;
 }
 
+/* ABOUT */
 
-/* ABOUT SECTION */
-
-.about{
-display:flex;
-gap:40px;
-align-items:center;
-flex-wrap:wrap;
+.about {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
 }
 
-.about img{
-width:320px;
-border-radius:10px;
+.about img {
+  width: 300px;
+  border-radius: 10px;
 }
 
-.about-text{
-flex:1;
+.about .text {
+  flex: 1;
 }
 
+/* MINISTRY */
 
-/* WORD SECTION */
-
-.word{
-background:#f5f5f5;
-padding:30px;
-border-radius:10px;
+.ministry {
+  background: #f4f4f4;
+  padding: 40px;
+  border-radius: 10px;
 }
-
 
 /* BOOKS */
 
-.books{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
+.books {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.book{
-flex:1 1 250px;
-background:white;
-padding:15px;
-border-radius:10px;
-box-shadow:0 3px 8px rgba(0,0,0,0.1);
-text-align:center;
+.book {
+  flex: 1 1 250px;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
-.book img{
-width:100%;
-border-radius:5px;
-margin-bottom:10px;
+.book img {
+  width: 100%;
+  border-radius: 5px;
 }
-
 
 /* MESSAGES */
 
-.messages{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
+.messages {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.message{
-flex:1 1 250px;
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 3px 8px rgba(0,0,0,0.1);
-text-align:center;
+.message {
+  flex: 1 1 250px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
 }
-
 
 /* NEWSLETTER */
 
-.newsletter{
-background:#b38b5c;
-color:white;
-text-align:center;
-padding:40px;
-border-radius:10px;
+.newsletter {
+  text-align: center;
+  background: #b38b5c;
+  color: white;
+  padding: 40px;
+  border-radius: 10px;
 }
 
-.newsletter input{
-padding:10px;
-margin:10px;
-border:none;
-border-radius:5px;
-width:200px;
+.newsletter input {
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 220px;
 }
-
-.newsletter button{
-padding:10px 25px;
-border:none;
-background:white;
-color:#b38b5c;
-font-weight:bold;
-border-radius:5px;
-cursor:pointer;
-}
-
 
 /* CONTACT */
 
-.contact{
-background:#f5f5f5;
-padding:30px;
-border-radius:10px;
-text-align:center;
+.contact {
+  text-align: center;
+  background: #f4f4f4;
+  padding: 40px;
+  border-radius: 10px;
 }
-
 
 /* MOBILE */
 
-@media(max-width:800px){
+@media(max-width: 900px) {
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
 
-.about{
-flex-direction:column;
-text-align:center;
-}
-
-.about img{
-width:220px;
-}
-
-.hero{
-height:auto;
-padding:50px 20px;
-}
-
-.hero-buttons{
-flex-direction:column;
-}
-
+  .button-container {
+    flex-direction: column;
+  }
 }
 
 </style>
-
 </head>
 
 <body>
 
-
 <!-- HERO -->
+
 <section class="hero">
 
 <img src="hero-placeholder.jpg">
@@ -236,74 +198,77 @@ flex-direction:column;
 <h1>Pastor Gabriel Abimbola Adegboye</h1>
 
 <p>
-Founder – Worksword of God Church<br>
+Founder – Worksword of God Church  
+<br>
 Preacher • Teacher • Prophet
 </p>
 
-<div class="hero-buttons">
+<div class="button-container">
 <button>Watch Messages</button>
 <button>Join Newsletter</button>
 </div>
 
 </section>
 
-
-
 <!-- ABOUT -->
+
 <section class="about">
 
 <img src="pastor-placeholder.jpg">
 
-<div class="about-text">
+<div class="text">
 
 <h2>About Pastor Gabriel</h2>
 
 <p>
-Pastor Gabriel Abimbola Adegboye is the Founder of Worksword of God Church,
-a ministry dedicated to preaching the Word of God with clarity, power,
-and prophetic insight.
+Pastor Gabriel Abimbola Adegboye is a devoted servant of God and the Founder of Worksword of God Church. He is called into ministry to preach the Word of God with clarity and spiritual insight, helping individuals discover their divine purpose and grow in faith.
 </p>
 
 <p>
-His calling centers on teaching righteousness, guiding believers
-toward spiritual growth, and delivering messages that inspire
-transformation in individuals and nations.
+His spiritual journey began with a deep passion for God and a commitment to understanding the Scriptures. Through prayer, study, and divine encounters, he received a calling into ministry that shaped his life's mission — to guide people toward righteousness and spiritual growth.
 </p>
 
 <p>
-Through his teachings and publications, he emphasizes prayer,
-faith, and obedience as the foundation for a victorious life.
+Pastor Gabriel’s teachings focus on faith, obedience, righteousness, and divine direction. He believes that God's Word has the power to transform lives and that every believer has a purpose designed by God.
+</p>
+
+<p>
+He is also known for his prophetic insight and spiritual guidance. His ministry emphasizes that God still speaks and directs His people today. Through prayer and teaching, he provides encouragement and direction to believers.
+</p>
+
+<p>
+His vision includes spiritual revival, national transformation, and raising believers who live according to God’s will.
 </p>
 
 </div>
 
 </section>
 
+<!-- MINISTRY -->
 
+<section class="ministry">
 
-<!-- WORD -->
-<section class="word">
-
-<h2>Word for the Nation</h2>
+<h2>Worksword of God Church</h2>
 
 <p>
-Pastor Gabriel shares prophetic insights and spiritual guidance
-for individuals and the nation.
+Worksword of God Church was founded as a place of worship, teaching, and spiritual growth. The church is dedicated to helping believers grow in their relationship with God through sound teaching and prayer.
 </p>
 
 <p>
-He teaches that national transformation begins with spiritual
-awakening and righteous living.
+The ministry focuses on raising individuals who live by faith and demonstrate God's power in their daily lives.
+</p>
+
+<p>
+Services include teaching, prayer sessions, prophetic guidance, and spiritual counseling.
 </p>
 
 </section>
 
-
-
 <!-- BOOKS -->
+
 <section>
 
-<h2>Publications</h2>
+<h2>Books & Publications</h2>
 
 <div class="books">
 
@@ -319,16 +284,15 @@ awakening and righteous living.
 
 <div class="book">
 <img src="book3.jpg">
-<h3>Nigeria: Indivisibility</h3>
+<h3>Nigeria: Indivisibility of a Nation</h3>
 </div>
 
 </div>
 
 </section>
 
-
-
 <!-- MESSAGES -->
+
 <section>
 
 <h2>Messages</h2>
@@ -337,46 +301,50 @@ awakening and righteous living.
 
 <div class="message">
 <h3>Walking in Faith</h3>
-<p>Learning to trust God in every situation.</p>
+<p>
+Understanding how to trust God in every situation.
+</p>
 </div>
 
 <div class="message">
-<h3>Divine Guidance</h3>
-<p>Understanding God's direction for your life.</p>
+<h3>Divine Direction</h3>
+<p>
+Learning how God leads His people.
+</p>
 </div>
 
 <div class="message">
-<h3>Prayer Power</h3>
-<p>The role of prayer in transformation.</p>
+<h3>The Power of Prayer</h3>
+<p>
+Prayer as a tool for transformation.
+</p>
 </div>
 
 </div>
 
 </section>
 
-
-
 <!-- NEWSLETTER -->
+
 <section class="newsletter">
 
 <h2>Join Newsletter</h2>
 
 <p>
-Receive messages and spiritual insights.
+Receive messages and updates from Pastor Gabriel.
 </p>
 
 <input placeholder="Your Name">
 <input placeholder="Your Email">
 
-<br>
+<br><br>
 
 <button>Subscribe</button>
 
 </section>
 
-
-
 <!-- CONTACT -->
+
 <section class="contact">
 
 <h2>Contact</h2>
@@ -385,7 +353,6 @@ Receive messages and spiritual insights.
 <p>Phone: +234XXXXXXXXXX</p>
 
 </section>
-
 
 </body>
 </html>
