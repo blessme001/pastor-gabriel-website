@@ -17,8 +17,8 @@
 
 body {
   font-family: 'Lato', sans-serif;
-  line-height: 1.6;
   color: #333;
+  line-height: 1.6;
 }
 
 section {
@@ -36,39 +36,42 @@ p {
   margin-bottom: 15px;
 }
 
-/* HERO */
+/* HERO SECTION */
 
 .hero {
   text-align: center;
-  padding: 40px 20px;
-  background: #222;
-  color: white;
-  border-bottom: 4px solid #b38b5c;
+  color: #fff;
+  background: #111;
+  padding: 60px 20px;
+  border-bottom: 5px solid #b38b5c;
 }
 
 .hero img {
-  width: 180px;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
   border-radius: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .hero h1 {
   font-size: 32px;
+  font-weight: bold;
 }
 
 .hero p {
-  font-size: 16px;
+  font-size: 18px;
   margin-bottom: 20px;
 }
 
-.button-container {
+.hero-buttons {
   display: flex;
   justify-content: center;
   gap: 15px;
 }
 
-button {
-  padding: 10px 25px;
+.hero button {
+  padding: 10px 20px;
   border: none;
   background: #b38b5c;
   color: white;
@@ -77,33 +80,50 @@ button {
   cursor: pointer;
 }
 
-button:hover {
-  background: #9c744c;
+.hero button:hover {
+  background: #9b7048;
 }
 
-/* ABOUT */
+/* ABOUT SECTION */
 
 .about {
   display: flex;
   gap: 40px;
   align-items: flex-start;
+  margin-top: 40px;
 }
 
 .about img {
-  width: 300px;
+  width: 280px;
   border-radius: 10px;
 }
 
-.about .text {
+.about-text {
   flex: 1;
 }
 
-/* MINISTRY */
+/* WORKSWORD */
 
-.ministry {
-  background: #f4f4f4;
+.word-nation {
+  background: #f5f5f5;
   padding: 40px;
   border-radius: 10px;
+  margin-top: 40px;
+}
+
+.word-nation button {
+  padding: 12px 25px;
+  background: #b38b5c;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.word-nation button:hover {
+  background: #9b7048;
 }
 
 /* BOOKS */
@@ -112,12 +132,13 @@ button:hover {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  margin-top: 40px;
 }
 
 .book {
   flex: 1 1 250px;
   background: white;
-  padding: 15px;
+  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.1);
   text-align: center;
@@ -134,6 +155,7 @@ button:hover {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  margin-top: 40px;
 }
 
 .message {
@@ -147,11 +169,12 @@ button:hover {
 /* NEWSLETTER */
 
 .newsletter {
-  text-align: center;
   background: #b38b5c;
   color: white;
   padding: 40px;
   border-radius: 10px;
+  text-align: center;
+  margin-top: 40px;
 }
 
 .newsletter input {
@@ -159,16 +182,27 @@ button:hover {
   margin: 10px;
   border: none;
   border-radius: 5px;
-  width: 220px;
+  width: 200px;
+}
+
+.newsletter button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  background: white;
+  color: #b38b5c;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 /* CONTACT */
 
 .contact {
-  text-align: center;
-  background: #f4f4f4;
+  background: #f5f5f5;
   padding: 40px;
   border-radius: 10px;
+  margin-top: 40px;
+  text-align: center;
 }
 
 /* MOBILE */
@@ -179,7 +213,7 @@ button:hover {
     text-align: center;
   }
 
-  .button-container {
+  .hero-buttons {
     flex-direction: column;
   }
 }
@@ -192,85 +226,76 @@ button:hover {
 <!-- HERO -->
 
 <section class="hero">
+  <img src="hero-placeholder.jpg">
+  <h1>Pastor Gabriel Abimbola Adegboye</h1>
+  <p>Founder – Worksword of God Church | Preacher • Teacher • Prophet</p>
 
-<img src="hero-placeholder.jpg">
-
-<h1>Pastor Gabriel Abimbola Adegboye</h1>
-
-<p>
-Founder – Worksword of God Church  
-<br>
-Preacher • Teacher • Prophet
-</p>
-
-<div class="button-container">
-<button>Watch Messages</button>
-<button>Join Newsletter</button>
-</div>
-
+  <div class="hero-buttons">
+    <button>Watch Messages</button>
+    <button>Join Newsletter</button>
+  </div>
 </section>
 
 <!-- ABOUT -->
 
 <section class="about">
 
-<img src="pastor-placeholder.jpg">
+  <img src="pastor-placeholder.jpg">
 
-<div class="text">
+  <div class="about-text">
+    <h2>About Pastor Gabriel</h2>
 
-<h2>About Pastor Gabriel</h2>
+    <p>
+    Pastor Gabriel Abimbola Adegboye is a devoted servant of God and the Founder
+    of Worksword of God Church. He is called into ministry with a divine mandate
+    to preach the Word of God, teach righteousness, and provide prophetic insight
+    for individuals and nations.
+    </p>
 
-<p>
-Pastor Gabriel Abimbola Adegboye is a devoted servant of God and the Founder of Worksword of God Church. He is called into ministry to preach the Word of God with clarity and spiritual insight, helping individuals discover their divine purpose and grow in faith.
-</p>
+    <p>
+    Through years of dedicated service, Pastor Gabriel has committed himself to
+    spiritual growth, biblical teaching, and national transformation through prayer
+    and the Word of God. His ministry focuses on restoring faith, building strong
+    believers, and guiding people into a deeper relationship with God.
+    </p>
 
-<p>
-His spiritual journey began with a deep passion for God and a commitment to understanding the Scriptures. Through prayer, study, and divine encounters, he received a calling into ministry that shaped his life's mission — to guide people toward righteousness and spiritual growth.
-</p>
+    <p>
+    His teachings emphasize holiness, faith, obedience to God, and spiritual
+    discipline. He believes that true national transformation begins with
+    spiritual renewal and a return to God’s principles.
+    </p>
 
-<p>
-Pastor Gabriel’s teachings focus on faith, obedience, righteousness, and divine direction. He believes that God's Word has the power to transform lives and that every believer has a purpose designed by God.
-</p>
+    <p>
+    Pastor Gabriel is also a teacher and author who shares divine revelations
+    concerning leadership, faith, and God’s purpose for nations. His ministry
+    continues to impact lives through messages, teachings, and prophetic guidance.
+    </p>
 
-<p>
-He is also known for his prophetic insight and spiritual guidance. His ministry emphasizes that God still speaks and directs His people today. Through prayer and teaching, he provides encouragement and direction to believers.
-</p>
-
-<p>
-His vision includes spiritual revival, national transformation, and raising believers who live according to God’s will.
-</p>
-
-</div>
+  </div>
 
 </section>
 
-<!-- MINISTRY -->
+<!-- WORKSWORD -->
 
-<section class="ministry">
+<section class="word-nation">
 
 <h2>Worksword of God Church</h2>
 
 <p>
-Worksword of God Church was founded as a place of worship, teaching, and spiritual growth. The church is dedicated to helping believers grow in their relationship with God through sound teaching and prayer.
+This document outlines the divine mandate, mission, and spiritual vision
+of Worksword of God Church and its calling to impact lives through
+the Word of God.
 </p>
 
-<p>
-The ministry focuses on raising individuals who live by faith and demonstrate God's power in their daily lives.
-</p>
-
-<p>
-Services include teaching, prayer sessions, prophetic guidance, and spiritual counseling.
-</p>
+<a href="worksword.docx" target="_blank">
+<button>Read Full Document</button>
+</a>
 
 </section>
 
 <!-- BOOKS -->
 
-<section>
-
-<h2>Books & Publications</h2>
-
-<div class="books">
+<section class="books">
 
 <div class="book">
 <img src="book1.jpg">
@@ -287,39 +312,25 @@ Services include teaching, prayer sessions, prophetic guidance, and spiritual co
 <h3>Nigeria: Indivisibility of a Nation</h3>
 </div>
 
-</div>
-
 </section>
 
 <!-- MESSAGES -->
 
-<section>
-
-<h2>Messages</h2>
-
-<div class="messages">
+<section class="messages">
 
 <div class="message">
 <h3>Walking in Faith</h3>
-<p>
-Understanding how to trust God in every situation.
-</p>
+<p>Trusting God through every season of life.</p>
 </div>
 
 <div class="message">
-<h3>Divine Direction</h3>
-<p>
-Learning how God leads His people.
-</p>
+<h3>Divine Guidance</h3>
+<p>Learning to follow God's direction.</p>
 </div>
 
 <div class="message">
-<h3>The Power of Prayer</h3>
-<p>
-Prayer as a tool for transformation.
-</p>
-</div>
-
+<h3>Prayer & Righteousness</h3>
+<p>The power of a holy life.</p>
 </div>
 
 </section>
@@ -328,16 +339,12 @@ Prayer as a tool for transformation.
 
 <section class="newsletter">
 
-<h2>Join Newsletter</h2>
+<h2>Subscribe</h2>
 
-<p>
-Receive messages and updates from Pastor Gabriel.
-</p>
+<input type="text" placeholder="Name">
+<input type="email" placeholder="Email">
 
-<input placeholder="Your Name">
-<input placeholder="Your Email">
-
-<br><br>
+<br>
 
 <button>Subscribe</button>
 
