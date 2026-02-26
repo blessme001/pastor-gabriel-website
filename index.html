@@ -18,64 +18,84 @@
       position: relative;
       text-align: center;
       color: #fff;
-      height: 100vh;
+      height: 65vh; /* Reduced aspect ratio */
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       overflow: hidden;
-      padding: 0;
-      z-index: 1;
     }
 
-    .hero .slideshow-bg {
+    /* Background Slideshow */
+    .hero::before {
+      content: '';
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      filter: brightness(35%) blur(8px);
-      z-index: 0;
-      transition: background-image 1.5s ease-in-out, transform 15s linear;
+      z-index: -1;
+      filter: brightness(50%) blur(8px); /* blurred background */
+      transition: background-image 1s ease-in-out;
     }
 
-    .hero .slideshow-bg.zoom {
-      transform: scale(1.05);
-    }
-
+    /* Hero content */
     .hero img.profile {
       max-width: 250px;
       border-radius: 10px;
       margin-bottom: 20px;
       z-index: 1;
     }
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      font-weight: bold;
+      z-index: 1;
+    }
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      font-weight: bold;
+      z-index: 1;
+    }
 
-    .hero h1 { font-size: 48px; margin-bottom: 10px; font-weight: bold; z-index: 1; }
-    .hero p { font-size: 20px; margin-bottom: 30px; font-weight: bold; z-index: 1; }
-
+    /* Buttons side by side */
     .hero .button-container {
       display: flex;
       gap: 20px;
       z-index: 1;
     }
-
-    .hero button { 
-      padding: 12px 30px; 
-      font-size: 16px; 
-      border: none; 
-      border-radius: 5px; 
-      cursor: pointer; 
-      background: #b38b5c; 
-      color: #fff; 
-      transition: 0.3s; 
+    .hero button {
+      padding: 12px 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background: #b38b5c;
+      color: #fff;
+      transition: 0.3s;
+      z-index: 1;
       font-weight: bold;
     }
     .hero button:hover { background: #9b7048; }
 
     /* About Section */
-    .about { display: flex; flex-wrap: wrap; align-items: center; gap: 40px; margin-bottom: 50px; }
-    .about img { flex: 1 1 250px; max-width: 100%; border-radius: 10px; filter: brightness(95%) blur(0.2px); }
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+    .about img {
+      flex: 1 1 250px;
+      max-width: 100%;
+      border-radius: 10px;
+      filter: brightness(95%) blur(0.2px);
+    }
     .about .text { flex: 2 1 500px; }
 
     /* Word for the Nation */
@@ -92,8 +112,24 @@
 
     /* Newsletter */
     .newsletter { text-align: center; background: #b38b5c; color: #fff; border-radius: 10px; padding: 40px 20px; margin-bottom: 50px; }
-    .newsletter input[type="text"], .newsletter input[type="email"] { padding: 10px; margin: 10px 5px; border-radius: 5px; border: none; width: 200px; max-width: 80%; }
-    .newsletter button { padding: 12px 30px; border: none; border-radius: 5px; cursor: pointer; background: #fff; color: #b38b5c; font-weight: bold; transition: 0.3s; }
+    .newsletter input[type="text"], .newsletter input[type="email"] {
+      padding: 10px;
+      margin: 10px 5px;
+      border-radius: 5px;
+      border: none;
+      width: 200px;
+      max-width: 80%;
+    }
+    .newsletter button {
+      padding: 12px 30px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background: #fff;
+      color: #b38b5c;
+      font-weight: bold;
+      transition: 0.3s;
+    }
     .newsletter button:hover { background: #eee; }
 
     /* Contact */
@@ -111,7 +147,6 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="slideshow-bg"></div>
     <img class="profile" src="hero-placeholder.jpg" alt="Pastor Gabriel">
     <h1>Pastor Gabriel Abimbola Adegboye</h1>
     <p>Founder – Worksword of God Church | Preacher • Teacher • Prophet</p>
@@ -185,23 +220,19 @@
     <p>Phone: +234XXXXXXXXXX</p>
   </section>
 
+  <!-- Slideshow JS -->
   <script>
     const slides = ['slide1.jpg','slide2.jpg','slide3.jpg','slide4.jpg','slide5.jpg'];
     let slideIndex = 0;
-    const bg = document.querySelector('.slideshow-bg');
+    const hero = document.querySelector('.hero');
+    const heroBg = document.querySelector('.hero::before');
 
     function changeBackground() {
-      // fade out
-      bg.style.opacity = 0;
-      setTimeout(() => {
-        bg.style.backgroundImage = `url('${slides[slideIndex]}')`;
-        bg.style.opacity = 1;
-        bg.classList.add('zoom');
-        slideIndex = (slideIndex + 1) % slides.length;
-      }, 500);
+      hero.style.backgroundImage = `url('${slides[slideIndex]}')`;
+      slideIndex = (slideIndex + 1) % slides.length;
     }
 
-    setInterval(changeBackground, 5000);
+    setInterval(changeBackground, 4000);
     window.onload = changeBackground;
   </script>
 
