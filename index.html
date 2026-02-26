@@ -13,7 +13,7 @@
     h1, h2, h3 { font-family: 'Playfair Display', serif; margin-bottom: 20px; }
     p { margin-bottom: 15px; }
 
-    /* Hero Section with Background Slideshow */
+    /* Hero Section with Fullscreen Background Slideshow */
     .hero {
       position: relative;
       text-align: center;
@@ -28,21 +28,22 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      filter: brightness(50%) blur(1px);
+      filter: brightness(50%);
       transition: background-image 1s ease-in-out;
     }
 
     .hero img.profile {
-      max-width: 200px;
+      max-width: 250px;
       border-radius: 10px;
       margin-bottom: 20px;
-      filter: brightness(90%) blur(0.5px);
+      filter: none; /* removed blur */
       z-index: 1;
-      object-fit: cover;
     }
 
-    .hero h1 { font-size: 48px; margin-bottom: 10px; z-index: 1; }
-    .hero p { font-size: 20px; margin-bottom: 30px; z-index: 1; }
+    .hero h1, .hero p {
+      filter: none; /* removed blur */
+      z-index: 1;
+    }
 
     /* Buttons side by side */
     .hero .button-container {
@@ -56,7 +57,7 @@
 
     /* About Section */
     .about { display: flex; flex-wrap: wrap; align-items: center; gap: 40px; margin-bottom: 50px; }
-    .about img { flex: 1 1 250px; max-width: 100%; border-radius: 10px; filter: brightness(95%) blur(0.2px); object-fit: cover; height: 250px; }
+    .about img { flex: 1 1 250px; max-width: 100%; border-radius: 10px; filter: brightness(95%) blur(0.2px); }
     .about .text { flex: 2 1 500px; }
 
     /* Word for the Nation */
@@ -65,7 +66,7 @@
     /* Books */
     .books { display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 50px; }
     .book { flex: 1 1 200px; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 3px 6px rgba(0,0,0,0.1); text-align: center; }
-    .book img { width: 100%; height: 250px; object-fit: cover; border-radius: 5px; margin-bottom: 10px; }
+    .book img { width: 100%; border-radius: 5px; margin-bottom: 10px; }
 
     /* Messages */
     .messages { display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 50px; }
@@ -172,8 +173,6 @@
 
     function changeBackground() {
       hero.style.backgroundImage = `url('${slides[slideIndex]}')`;
-      hero.style.backgroundSize = 'cover';
-      hero.style.backgroundPosition = 'center';
       slideIndex = (slideIndex + 1) % slides.length;
     }
 
