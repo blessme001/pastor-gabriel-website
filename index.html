@@ -1,117 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pastor Gabriel Abimbola Adegboye</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato&display=swap" rel="stylesheet">
-<style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:'Lato', sans-serif; color:#333; line-height:1.6; }
-
-  section { padding: 80px 20px; max-width: 1200px; margin:auto; }
-  h1,h2,h3 { font-family:'Playfair Display', serif; margin-bottom:20px; }
-  p { margin-bottom:15px; }
-
-  /* Hero Section */
-  .hero {
-    position: relative;
-    text-align: center;
-    color: #fff;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    border-radius:10px;
-    margin-bottom:50px;
-    padding:0 20px;
-  }
-
-  /* Slideshow background container */
-  .hero .slideshow-bg {
-    position:absolute;
-    top:0; left:0;
-    width:100%; height:100%;
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-    filter: brightness(30%) blur(15px);
-    z-index:0;
-    transition: background-image 1s ease-in-out, filter 1s ease-in-out;
-  }
-
-  /* Hero placeholder image and text */
-  .hero img.profile {
-    max-width: 180px;
-    border-radius:10px;
-    margin-bottom:20px;
-    z-index:1;
-    filter:brightness(100%);
-  }
-
-  .hero h1 { font-size:36px; margin-bottom:10px; z-index:1; font-weight:bold; }
-  .hero p { font-size:18px; margin-bottom:20px; z-index:1; font-weight:bold; }
-
-  .hero .button-container {
-    display:flex;
-    gap:20px;
-    z-index:1;
-    flex-wrap:wrap;
-    justify-content:center;
-  }
-
-  .hero button {
-    padding:12px 30px;
-    font-size:16px;
-    border:none;
-    border-radius:5px;
-    cursor:pointer;
-    background:#b38b5c;
-    color:#fff;
-    transition:0.3s;
-  }
-  .hero button:hover { background:#9b7048; }
-
-  /* About Section */
-  .about { display:flex; flex-wrap:wrap; align-items:center; gap:40px; margin-bottom:50px; }
-  .about img { flex:1 1 300px; max-width:100%; border-radius:10px; filter:brightness(95%); }
-  .about .text { flex:2 1 500px; }
-
-  /* Word for the Nation */
-  .word-nation { background:#f5f5f5; border-radius:10px; padding:40px; margin-bottom:50px; }
-
-  /* Books */
-  .books { display:flex; flex-wrap:wrap; gap:20px; margin-bottom:50px; }
-  .book { flex:1 1 200px; background:#fff; padding:20px; border-radius:10px; box-shadow:0 3px 6px rgba(0,0,0,0.1); text-align:center; }
-  .book img { width:100%; border-radius:5px; margin-bottom:10px; }
-
-  /* Messages */
-  .messages { display:flex; flex-wrap:wrap; gap:20px; margin-bottom:50px; }
-  .message { flex:1 1 300px; background:#fff; padding:20px; border-radius:10px; box-shadow:0 3px 6px rgba(0,0,0,0.1); text-align:center; }
-
-  /* Newsletter */
-  .newsletter { text-align:center; background:#b38b5c; color:#fff; border-radius:10px; padding:40px 20px; margin-bottom:50px; }
-  .newsletter input[type="text"], .newsletter input[type="email"] {
-    padding:10px; margin:10px 5px; border-radius:5px; border:none; width:200px; max-width:80%;
-  }
-  .newsletter button { padding:12px 30px; border:none; border-radius:5px; cursor:pointer; background:#fff; color:#b38b5c; font-weight:bold; transition:0.3s; }
-  .newsletter button:hover { background:#eee; }
-
-  /* Contact */
-  .contact { background:#f5f5f5; border-radius:10px; padding:40px; text-align:center; margin-bottom:50px; }
-
-  /* Responsive */
-  @media(max-width:900px){
-    .about { flex-direction:column; text-align:center; }
-    .about .text { flex:unset; }
-    .hero .button-container { flex-direction:column; gap:10px; }
-  }
-</style>
-</head>
-<body>
-
 <!-- Hero Section -->
 <section class="hero">
   <div class="slideshow-bg"></div>
@@ -124,85 +10,35 @@
   </div>
 </section>
 
-<!-- About Section -->
-<section class="about">
-  <img src="pastor-placeholder.jpg" alt="Pastor Gabriel">
-  <div class="text">
-    <h2>About Pastor Gabriel</h2>
-    <p>Pastor Gabriel Abimbola Adegboye is a visionary spiritual leader and Founder of Worksword of God Church. Called to preach, teach, and provide prophetic guidance, he has dedicated his life to inspiring individuals and communities toward spiritual growth, righteousness, and national transformation.</p>
-  </div>
-</section>
-
-<!-- Word for the Nation Section -->
-<section class="word-nation">
-  <h2>Word for the Nation</h2>
-  <p>Pastor Gabriel’s prophetic messages provide divine insight for both individuals and the nation. He emphasizes spiritual solutions to societal challenges, the importance of righteous leadership, and living in God’s favor.</p>
-  <p>“Many challenges facing our nation require spiritual guidance. Believers must embrace prayer, righteousness, and faith to see lasting transformation.”</p>
-</section>
-
-<!-- Books Section -->
-<section class="books">
-  <div class="book">
-    <img src="book1.jpg" alt="Book 1">
-    <h3>The Emergence of Asiwaju Bola Tinubu as the 16th President of Nigeria</h3>
-  </div>
-  <div class="book">
-    <img src="book2.jpg" alt="Book 2">
-    <h3>Africans in Diaspora</h3>
-  </div>
-  <div class="book">
-    <img src="book3.jpg" alt="Book 3">
-    <h3>Nigeria: Indivisibility of a Nation</h3>
-  </div>
-</section>
-
-<!-- Messages Section -->
-<section class="messages">
-  <div class="message">
-    <h3>Walking in Faith</h3>
-    <p>Discover how to trust God through challenges and live confidently in His promises.</p>
-  </div>
-  <div class="message">
-    <h3>Divine Guidance</h3>
-    <p>Learn to discern God’s will in your life and make spiritually aligned decisions.</p>
-  </div>
-  <div class="message">
-    <h3>Prayer & Righteousness</h3>
-    <p>Master the power of prayer and moral integrity to transform your personal and communal life.</p>
-  </div>
-</section>
-
-<!-- Newsletter Section -->
-<section class="newsletter">
-  <h2>Subscribe to the Newsletter</h2>
-  <p>Join thousands of believers receiving weekly messages, prophetic insights, and spiritual guidance directly from Pastor Gabriel.</p>
-  <input type="text" placeholder="Your Name">
-  <input type="email" placeholder="Your Email">
-  <button>Subscribe</button>
-</section>
-
-<!-- Contact Section -->
-<section class="contact">
-  <h2>Contact</h2>
-  <p>Email: info@workswordofgodchurch.org</p>
-  <p>Phone: +234XXXXXXXXXX</p>
-</section>
+<style>
+.hero .slideshow-bg {
+  position:absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  filter: brightness(35%) blur(8px); /* reduced blur */
+  z-index:0;
+  transition: background-image 1.5s ease-in-out; /* smoother transition */
+}
+</style>
 
 <script>
-  const slides = [
-    'slide1.jpg','slide2.jpg','slide3.jpg','slide4.jpg','slide5.jpg'
-  ];
-  let slideIndex = 0;
-  const slideshowBg = document.querySelector('.slideshow-bg');
+const slides = ['slide1.jpg','slide2.jpg','slide3.jpg','slide4.jpg','slide5.jpg'];
+let slideIndex = 0;
+const slideshowBg = document.querySelector('.slideshow-bg');
 
-  function changeBackground() {
+function changeBackground() {
+  // fade out/in effect using opacity
+  slideshowBg.style.opacity = 0;
+  setTimeout(() => {
     slideshowBg.style.backgroundImage = `url('${slides[slideIndex]}')`;
+    slideshowBg.style.opacity = 1;
     slideIndex = (slideIndex + 1) % slides.length;
-  }
+  }, 500); // 500ms fade
+}
 
-  setInterval(changeBackground, 4000);
-  window.onload = changeBackground;
+setInterval(changeBackground, 5000); // slower change to feel smooth
+window.onload = changeBackground;
 </script>
-
-</body>
-</html>
