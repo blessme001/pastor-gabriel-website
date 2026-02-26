@@ -13,100 +13,61 @@
     h1, h2, h3 { font-family: 'Playfair Display', serif; margin-bottom: 20px; }
     p { margin-bottom: 15px; }
 
-    /* Hero + About Section */
-    .hero-about {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 40px;
-      margin-bottom: 50px;
+    /* Hero Section with moderate slideshow background */
+    .hero {
       position: relative;
-    }
-
-    .hero-content {
-      flex: 1 1 300px;
+      text-align: center;
+      color: #fff;
+      height: 500px; /* Moderate height */
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
-      text-align: center;
-      position: relative;
-      z-index: 2;
+      overflow: hidden;
+      padding: 0 20px;
+      border-radius: 10px;
+      margin-bottom: 50px;
     }
 
-    .hero-content img.profile {
-      max-width: 200px;
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1;
+      filter: brightness(50%) blur(4px); /* blur effect */
+      transition: background-image 1s ease-in-out;
+    }
+
+    .hero img.profile {
+      max-width: 180px;
       border-radius: 10px;
       margin-bottom: 20px;
-    }
-
-    .hero-content h1 {
-      font-size: 28px;
-      font-weight: 900;
-      margin-bottom: 10px;
-      color: #fff;
-    }
-
-    .hero-content p {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 20px;
-      color: #fff;
-    }
-
-    .button-container {
-      display: flex;
-      gap: 15px;
-    }
-
-    .hero-content button {
-      padding: 12px 25px;
-      font-size: 14px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      background: #b38b5c;
-      color: #fff;
-      font-weight: 700;
-      transition: 0.3s;
-    }
-
-    .hero-content button:hover {
-      background: #9b7048;
-    }
-
-    .about-text {
-      flex: 2 1 500px;
-      font-weight: 600;
-      color: #fff;
-    }
-
-    /* Background slideshow */
-    .background-slideshow {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
       z-index: 1;
-      overflow: hidden;
-      filter: blur(5px);
+      filter: brightness(100%); /* make clear */
     }
 
-    .background-slideshow img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      top: 0;
-      left: 0;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-      filter: brightness(50%);
+    .hero h1 { font-size: 36px; margin-bottom: 10px; z-index: 1; font-weight: bold; }
+    .hero p { font-size: 18px; margin-bottom: 20px; z-index: 1; font-weight: bold; }
+
+    .hero .button-container {
+      display: flex;
+      gap: 20px;
+      z-index: 1;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
-    .background-slideshow img.active {
-      opacity: 1;
-    }
+    .hero button { padding: 12px 30px; font-size: 16px; border: none; border-radius: 5px; cursor: pointer; background: #b38b5c; color: #fff; transition: 0.3s; }
+    .hero button:hover { background: #9b7048; }
+
+    /* About Section */
+    .about { display: flex; flex-wrap: wrap; align-items: center; gap: 40px; margin-bottom: 50px; }
+    .about img { flex: 1 1 300px; max-width: 100%; border-radius: 10px; filter: brightness(95%); }
+    .about .text { flex: 2 1 500px; }
 
     /* Word for the Nation */
     .word-nation { background: #f5f5f5; border-radius: 10px; padding: 40px; margin-bottom: 50px; }
@@ -131,35 +92,29 @@
 
     /* Responsive */
     @media(max-width: 900px) {
-      .hero-about { flex-direction: column; text-align: center; }
-      .button-container { flex-direction: column; gap: 10px; }
+      .about { flex-direction: column; text-align: center; }
+      .about .text { flex: unset; }
+      .hero .button-container { flex-direction: column; gap: 10px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Background Slideshow -->
-  <div class="background-slideshow">
-    <img src="slide1.jpg" class="active" alt="Slide 1">
-    <img src="slide2.jpg" alt="Slide 2">
-    <img src="slide3.jpg" alt="Slide 3">
-    <img src="slide4.jpg" alt="Slide 4">
-    <img src="slide5.jpg" alt="Slide 5">
-  </div>
-
-  <!-- Hero + About Section -->
-  <section class="hero-about">
-    <div class="hero-content">
-      <img class="profile" src="hero-placeholder.jpg" alt="Pastor Gabriel">
-      <h1>Pastor Gabriel Abimbola Adegboye</h1>
-      <p>Founder – Worksword of God Church | Preacher • Teacher • Prophet</p>
-      <div class="button-container">
-        <button>Watch Messages</button>
-        <button>Join Newsletter</button>
-      </div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <img class="profile" src="hero-placeholder.jpg" alt="Pastor Gabriel">
+    <h1>Pastor Gabriel Abimbola Adegboye</h1>
+    <p>Founder – Worksword of God Church | Preacher • Teacher • Prophet</p>
+    <div class="button-container">
+      <button>Watch Messages</button>
+      <button>Join Newsletter</button>
     </div>
+  </section>
 
-    <div class="about-text">
+  <!-- About Section -->
+  <section class="about">
+    <img src="pastor-placeholder.jpg" alt="Pastor Gabriel">
+    <div class="text">
       <h2>About Pastor Gabriel</h2>
       <p>Pastor Gabriel Abimbola Adegboye is a visionary spiritual leader and Founder of Worksword of God Church. Called to preach, teach, and provide prophetic guidance, he has dedicated his life to inspiring individuals and communities toward spiritual growth, righteousness, and national transformation.</p>
     </div>
@@ -221,16 +176,18 @@
   </section>
 
   <script>
-    const slides = document.querySelectorAll('.background-slideshow img');
-    let currentSlide = 0;
+    const slides = ['slide1.jpg','slide2.jpg','slide3.jpg','slide4.jpg','slide5.jpg'];
+    let slideIndex = 0;
+    const hero = document.querySelector('.hero');
 
-    function showNextSlide() {
-      slides.forEach((img) => img.classList.remove('active'));
-      slides[currentSlide].classList.add('active');
-      currentSlide = (currentSlide + 1) % slides.length;
+    function changeBackground() {
+      hero.style.setProperty('--bg-image', `url('${slides[slideIndex]}')`);
+      hero.style.backgroundImage = `url('${slides[slideIndex]}')`;
+      slideIndex = (slideIndex + 1) % slides.length;
     }
 
-    setInterval(showNextSlide, 4000);
+    setInterval(changeBackground, 4000);
+    window.onload = changeBackground;
   </script>
 
 </body>
