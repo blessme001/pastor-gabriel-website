@@ -84,7 +84,59 @@
     .book img { width: 100%; border-radius: 5px; margin-bottom: 10px; }
 
     /* Messages */
-    .messages { display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 50px; }
+    .messages { display: flex; flex-wrap: wrap; gap: 30px; margin-bottom: 50px; justify-content: center; }
+    .message { 
+      flex: 1 1 320px; 
+      max-width: 360px;
+      background: #fff; 
+      padding: 15px; 
+      border-radius: 12px; 
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+      text-align: center; 
+      transition: transform 0.2s ease;
+    }
+    .message:hover {
+      transform: translateY(-5px);
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 177%; /* Facebook reel ratio */
+      overflow: hidden;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .fb-button-container {
+      text-align: center;
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    .fb-button {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #1877f2;
+      color: white;
+      border-radius: 6px;
+      font-weight: bold;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+
+    .fb-button:hover {
+      background: #145dbf;
+    }
     .message { flex: 1 1 300px; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 3px 6px rgba(0,0,0,0.1); text-align: center; }
 
     /* Newsletter */
@@ -152,33 +204,42 @@
   <!-- Messages Section -->
   <section class="messages">
     <div class="message">
-      <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/568457956308771&show_text=false" 
-        width="100%" height="315" style="border:none;overflow:hidden" 
+      <div class="video-wrapper">
+        <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/568457956308771&show_text=false" 
         scrolling="no" frameborder="0" allowfullscreen="true" 
         allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-      </iframe>
+        </iframe>
+      </div>
       <h3>If You Want to Prosper</h3>
       <p>If you want to prosper, do something for God.</p>
     </div>
 
     <div class="message">
-      <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/646420064597009&show_text=false" 
-        width="100%" height="315" style="border:none;overflow:hidden" 
+      <div class="video-wrapper">
+        <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/646420064597009&show_text=false" 
         scrolling="no" frameborder="0" allowfullscreen="true" 
         allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-      </iframe>
+        </iframe>
+      </div>
       <h3>Follow God Willfully</h3>
       <p>Money will follow you as you follow God willfully.</p>
     </div>
 
     <div class="message">
-      <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/1218116729960293&show_text=false" 
-        width="100%" height="315" style="border:none;overflow:hidden" 
+      <div class="video-wrapper">
+        <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/1218116729960293&show_text=false" 
         scrolling="no" frameborder="0" allowfullscreen="true" 
         allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-      </iframe>
+        </iframe>
+      </div>
       <h3>I Am Jacob</h3>
       <p>God will love you as He loved Jacob. God spreads His wings over His beloved.</p>
+    </div>
+
+    <div class="fb-button-container">
+      <a class="fb-button" href="https://www.facebook.com" target="_blank">
+        Watch More on Facebook
+      </a>
     </div>
   </section>
 
