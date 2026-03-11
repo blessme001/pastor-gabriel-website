@@ -4,6 +4,936 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pastor Gabriel Abimbola Adegboye</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Josefin+Sans:wght@200;300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #e8d098;
+      --gold-dark: #8b6914;
+      --cream: #faf7f2;
+      --dark: #0f0c08;
+      --charcoal: #1e1a14;
+      --mid: #4a3f2f;
+      --text: #2c2416;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Josefin Sans', sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: rgba(15, 12, 8, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+    }
+
+    nav .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      color: var(--gold-light);
+      text-transform: uppercase;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 40px;
+    }
+
+    nav ul a {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav ul a:hover { color: var(--gold); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: var(--dark);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse 60% 80% at 70% 50%, rgba(201,168,76,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 20% 30%, rgba(139,105,20,0.08) 0%, transparent 60%);
+    }
+
+    /* Geometric line decoration */
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 45%;
+      border-left: 1px solid rgba(201,168,76,0.15);
+      background: linear-gradient(180deg, 
+        rgba(201,168,76,0.04) 0%, 
+        rgba(201,168,76,0.08) 50%, 
+        rgba(201,168,76,0.02) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 120px 60px 80px;
+      max-width: 700px;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.65rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.2s forwards;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.1;
+      color: #fff;
+      margin-bottom: 30px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.4s forwards;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-desc {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.45);
+      text-transform: uppercase;
+      margin-bottom: 60px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.6s forwards;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.8s forwards;
+    }
+
+    .btn-primary {
+      padding: 16px 40px;
+      background: var(--gold);
+      color: var(--dark);
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s;
+    }
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      padding: 16px 40px;
+      background: transparent;
+      color: rgba(255,255,255,0.7);
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,0.2);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s;
+    }
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* Profile image panel */
+    .hero-image-panel {
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 42%;
+      z-index: 1;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 0;
+    }
+
+    .hero-image-panel img {
+      height: 85%;
+      width: 100%;
+      object-fit: cover;
+      object-position: top center;
+      filter: grayscale(20%) contrast(1.05);
+      opacity: 0.85;
+    }
+
+    .hero-image-panel::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, var(--dark) 0%, transparent 25%, transparent 70%, var(--dark) 100%),
+                  linear-gradient(180deg, var(--dark) 0%, transparent 20%, transparent 80%, var(--dark) 100%);
+      z-index: 2;
+    }
+
+    /* Scroll indicator */
+    .scroll-hint {
+      position: absolute;
+      bottom: 40px;
+      left: 60px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      opacity: 0;
+      animation: fadeUp 0.8s 1.2s forwards;
+      z-index: 2;
+    }
+
+    .scroll-hint span {
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+    }
+
+    .scroll-line {
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .scroll-line::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: #fff;
+      animation: scanLine 2s 1.5s infinite;
+    }
+
+    /* ── SECTION COMMON ── */
+    .section-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 120px 60px;
+    }
+
+    .section-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      max-width: 60px;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.5;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--dark);
+      margin-bottom: 40px;
+    }
+
+    /* ── ABOUT ── */
+    .about-section {
+      background: var(--cream);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: center;
+    }
+
+    .about-image-wrap {
+      position: relative;
+    }
+
+    .about-image-wrap img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: top;
+      filter: grayscale(15%);
+    }
+
+    .about-image-wrap::before {
+      content: '';
+      position: absolute;
+      top: -20px; left: -20px;
+      right: 20px; bottom: 20px;
+      border: 1px solid rgba(201,168,76,0.3);
+      z-index: -1;
+    }
+
+    .about-image-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: -10px; right: -10px;
+      width: 60%;
+      height: 30%;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      z-index: -1;
+      opacity: 0.15;
+    }
+
+    .about-text p {
+      font-size: 0.9rem;
+      line-height: 1.9;
+      color: var(--mid);
+      margin-bottom: 20px;
+      font-weight: 300;
+    }
+
+    .about-divider {
+      width: 40px;
+      height: 2px;
+      background: var(--gold);
+      margin: 30px 0;
+    }
+
+    /* ── WORD FOR THE NATION ── */
+    .word-section {
+      background: var(--charcoal);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .word-section::before {
+      content: '"';
+      position: absolute;
+      top: -60px; left: 40px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 400px;
+      color: rgba(201,168,76,0.04);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .word-section .section-wrapper {
+      position: relative;
+      z-index: 1;
+    }
+
+    .word-section .section-label { color: var(--gold); }
+    .word-section .section-title { color: var(--cream); }
+
+    .word-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--gold-light);
+      line-height: 1.5;
+      max-width: 800px;
+      margin-bottom: 30px;
+      border-left: 2px solid var(--gold);
+      padding-left: 40px;
+    }
+
+    .word-body {
+      font-size: 0.85rem;
+      line-height: 2;
+      color: rgba(250,247,242,0.55);
+      max-width: 700px;
+      padding-left: 40px;
+      font-weight: 300;
+    }
+
+    /* ── BOOKS ── */
+    .books-section {
+      background: var(--cream);
+    }
+
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .book-card {
+      position: relative;
+      background: #fff;
+      overflow: hidden;
+      transition: transform 0.4s ease;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    }
+
+    .book-card:hover { transform: translateY(-8px); }
+
+    .book-cover {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      display: block;
+    }
+
+    .book-info {
+      padding: 24px 28px 28px;
+    }
+
+    .book-info h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--dark);
+      margin-bottom: 16px;
+    }
+
+    .book-link {
+      display: inline-block;
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      text-decoration: none;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 3px;
+      transition: all 0.3s;
+    }
+    .book-link:hover { color: var(--dark); }
+
+    .book-soon {
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(74,63,47,0.35);
+      font-style: italic;
+    }
+
+    /* ── MESSAGES ── */
+    .messages-section {
+      background: #f0ebe2;
+      position: relative;
+    }
+
+    .messages-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 60px;
+    }
+
+    .message-card {
+      background: var(--dark);
+      border-radius: 2px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .message-card:hover { transform: scale(1.02); }
+
+    .video-wrap {
+      position: relative;
+      padding-bottom: 177%;
+      overflow: hidden;
+    }
+    .video-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .message-info {
+      padding: 20px 22px;
+      border-top: 1px solid rgba(201,168,76,0.2);
+    }
+
+    .message-info h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .message-info p {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    .fb-cta {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .fb-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 40px;
+      background: #1877f2;
+      color: #fff;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .fb-btn:hover { background: #0d5bc4; transform: translateY(-2px); }
+
+    /* ── NEWSLETTER ── */
+    .newsletter-section {
+      background: var(--charcoal);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .newsletter-section::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 100% at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .newsletter-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .newsletter-inner .section-label { justify-content: center; }
+    .newsletter-inner .section-label::after { display: none; }
+    .newsletter-inner .section-title { color: var(--cream); }
+
+    .newsletter-inner p {
+      font-size: 0.8rem;
+      color: rgba(250,247,242,0.45);
+      line-height: 1.8;
+      margin-bottom: 40px;
+      font-weight: 300;
+    }
+
+    .newsletter-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .newsletter-form input {
+      width: 100%;
+      max-width: 380px;
+      padding: 14px 22px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,168,76,0.2);
+      color: #fff;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    .newsletter-form input::placeholder { color: rgba(255,255,255,0.25); }
+    .newsletter-form input:focus { border-color: var(--gold); }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      background: var(--dark);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .contact-left .section-title { color: var(--cream); }
+
+    .contact-detail {
+      margin-bottom: 24px;
+    }
+
+    .contact-detail .label {
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    .contact-detail .value {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+      font-weight: 300;
+    }
+
+    .contact-right {
+      border-left: 1px solid rgba(201,168,76,0.15);
+      padding-left: 80px;
+    }
+
+    .contact-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--gold-light);
+      line-height: 1.6;
+      opacity: 0.7;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      border-top: 1px solid rgba(201,168,76,0.1);
+      padding: 30px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer span {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      color: rgba(255,255,255,0.2);
+      text-transform: uppercase;
+    }
+
+    .footer-cross {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      color: var(--gold);
+      opacity: 0.4;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes scanLine {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+
+    /* Reveal on scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.15s; }
+    .reveal-delay-2 { transition-delay: 0.3s; }
+    .reveal-delay-3 { transition-delay: 0.45s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 16px 24px; }
+      nav ul { gap: 20px; }
+      .section-wrapper { padding: 80px 24px; }
+      .hero-content { padding: 100px 24px 60px; }
+      .hero-image-panel { display: none; }
+      .about-grid { grid-template-columns: 1fr; gap: 50px; }
+      .books-grid { grid-template-columns: 1fr; }
+      .messages-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .contact-right { border-left: none; padding-left: 0; border-top: 1px solid rgba(201,168,76,0.15); padding-top: 40px; }
+      footer { flex-direction: column; gap: 10px; text-align: center; padding: 24px; }
+      nav ul { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Worksword of God Church</div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#word">Word</a></li>
+    <li><a href="#books">Books</a></li>
+    <li><a href="#messages">Messages</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Preacher · Teacher · Prophet</div>
+    <h1>Pastor Gabriel<br><em>Abimbola</em><br>Adegboye</h1>
+    <p class="hero-desc">Founder — Worksword of God Church</p>
+    <div class="hero-buttons">
+      <a href="#messages" class="btn-primary">Watch Messages</a>
+      <a href="#newsletter" class="btn-outline">Join Newsletter</a>
+    </div>
+  </div>
+
+  <div class="hero-image-panel">
+    <img src="hero-placeholder.jpg" alt="Pastor Gabriel Adegboye">
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="section-wrapper">
+    <div class="about-grid">
+      <div class="about-image-wrap reveal">
+        <img src="pastor-placeholder.jpg" alt="Pastor Gabriel">
+      </div>
+      <div class="about-text">
+        <div class="section-label reveal">About</div>
+        <h2 class="section-title reveal">A Life Devoted<br>to <em style="font-family:'Cormorant Garamond',serif;font-style:italic;">Divine Purpose</em></h2>
+        <div class="about-divider reveal"></div>
+        <p class="reveal">Pastor Gabriel Abimbola Adegboye is a visionary spiritual leader and Founder of Worksword of God Church. Called to preach, teach, and provide prophetic guidance, he has dedicated his life to inspiring individuals and communities toward spiritual growth, righteousness, and national transformation.</p>
+        <p class="reveal reveal-delay-1">He has ministered in several nations, empowered youth and women, and published books that inspire leadership, spirituality, and cultural identity. His teachings combine practical wisdom, prophetic insight, and encouragement for personal and national development.</p>
+        <p class="reveal reveal-delay-2">Through his church, Pastor Gabriel provides mentorship programs, community development initiatives, and a platform for believers to grow in faith and societal impact.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORD FOR THE NATION -->
+<section class="word-section" id="word">
+  <div class="section-wrapper">
+    <div class="section-label reveal">Prophetic Insight</div>
+    <h2 class="section-title reveal">Word for<br>the Nation</h2>
+    <blockquote class="word-quote reveal">
+      "Many challenges facing our nation require spiritual guidance. Believers must embrace prayer, righteousness, and faith to see lasting transformation."
+    </blockquote>
+    <p class="word-body reveal reveal-delay-1">Pastor Gabriel's prophetic messages provide divine insight for both individuals and the nation. He emphasizes spiritual solutions to societal challenges, the importance of righteous leadership, and living in God's favor.</p>
+  </div>
+</section>
+
+<!-- BOOKS -->
+<section class="books-section" id="books">
+  <div class="section-wrapper">
+    <div class="section-label reveal">Published Works</div>
+    <h2 class="section-title reveal">Books &amp;<br>Publications</h2>
+
+    <div class="books-grid">
+      <div class="book-card reveal">
+        <img class="book-cover" src="tinubu-thumbnail.jpg" alt="The Emergence of Asiwaju Bola Tinubu as the 16th President of Nigeria">
+        <div class="book-info">
+          <h3>The Emergence of Asiwaju Bola Tinubu as the 16th President of Nigeria</h3>
+          <a class="book-link" href="tinubu-book.pdf" target="_blank">Read PDF &rarr;</a>
+        </div>
+      </div>
+
+      <div class="book-card reveal reveal-delay-1">
+        <img class="book-cover" src="https://images-na.ssl-images-amazon.com/images/I/41Qh0VY8G-L._SX331_BO1,204,203,200_.jpg" alt="Africans in Diaspora">
+        <div class="book-info">
+          <h3>Africans in Diaspora</h3>
+          <a class="book-link" href="https://a.co/d/085sFV73" target="_blank">Buy on Amazon &rarr;</a>
+        </div>
+      </div>
+
+      <div class="book-card reveal reveal-delay-2">
+        <div style="width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,#1e1a14 0%,#2c2416 50%,#1e1a14 100%);display:flex;align-items:center;justify-content:center;padding:40px;">
+          <div style="text-align:center;">
+            <div style="font-size:3rem;color:var(--gold);opacity:0.3;font-family:'Cormorant Garamond',serif;line-height:1;">✦</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--gold-light);opacity:0.5;margin-top:16px;font-style:italic;line-height:1.4;">Nigeria: Indivisibility<br>of a Nation</div>
+          </div>
+        </div>
+        <div class="book-info">
+          <h3>Nigeria: Indivisibility of a Nation</h3>
+          <span class="book-soon">Coming Soon</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MESSAGES -->
+<section class="messages-section" id="messages">
+  <div class="section-wrapper">
+    <div class="section-label reveal">Sermons &amp; Teachings</div>
+    <h2 class="section-title reveal">Recent<br>Messages</h2>
+
+    <div class="messages-grid">
+      <div class="message-card reveal">
+        <div class="video-wrap">
+          <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/568457956308771&show_text=false" scrolling="no" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+        <div class="message-info">
+          <h3>If You Want to Prosper</h3>
+          <p>If you want to prosper, do something for God.</p>
+        </div>
+      </div>
+
+      <div class="message-card reveal reveal-delay-1">
+        <div class="video-wrap">
+          <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/646420064597009&show_text=false" scrolling="no" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+        <div class="message-info">
+          <h3>Follow God Willfully</h3>
+          <p>Money will follow you as you follow God willfully.</p>
+        </div>
+      </div>
+
+      <div class="message-card reveal reveal-delay-2">
+        <div class="video-wrap">
+          <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/1218116729960293&show_text=false" scrolling="no" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+        <div class="message-info">
+          <h3>I Am Jacob</h3>
+          <p>God will love you as He loved Jacob. God spreads His wings over His beloved.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="fb-cta reveal">
+      <a class="fb-btn" href="https://www.facebook.com" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Watch More on Facebook
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section" id="newsletter">
+  <div class="section-wrapper">
+    <div class="newsletter-inner">
+      <div class="section-label reveal">Stay Connected</div>
+      <h2 class="section-title reveal">Subscribe to<br>the Newsletter</h2>
+      <p class="reveal">Join thousands of believers receiving weekly messages, prophetic insights, and spiritual guidance directly from Pastor Gabriel.</p>
+      <div class="newsletter-form reveal">
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email Address">
+        <button class="btn-primary" style="width:100%;max-width:380px;">Subscribe Now</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="section-wrapper">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <div class="section-label reveal" style="color:var(--gold);">Get in Touch</div>
+        <h2 class="section-title reveal">Contact<br>the Ministry</h2>
+        <div class="contact-detail reveal">
+          <div class="label">Email</div>
+          <div class="value">info@workswordofgodchurch.org</div>
+        </div>
+        <div class="contact-detail reveal reveal-delay-1">
+          <div class="label">Phone</div>
+          <div class="value">+234 XXX XXX XXXX</div>
+        </div>
+        <div class="contact-detail reveal reveal-delay-2">
+          <div class="label">Church</div>
+          <div class="value">Worksword of God Church</div>
+        </div>
+      </div>
+      <div class="contact-right reveal">
+        <p class="contact-quote">"The word of God is the foundation on which nations are built and lives are transformed."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>&copy; 2025 Worksword of God Church · All Rights Reserved</span>
+  <span class="footer-cross">✦</span>
+  <span>Pastor Gabriel Abimbola Adegboye</span>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pastor Gabriel Abimbola Adegboye</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
