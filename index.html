@@ -293,6 +293,120 @@
       margin-bottom: 40px;
     }
 
+    /* ── MINISTRY HIGHLIGHTS ── */
+    .highlights-section {
+      background: var(--dark);
+      border-top: 1px solid rgba(201,168,76,0.15);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+
+    .highlights-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .highlight-item {
+      padding: 50px 30px;
+      text-align: center;
+      border-right: 1px solid rgba(201,168,76,0.1);
+      transition: background 0.3s;
+    }
+    .highlight-item:last-child { border-right: none; }
+    .highlight-item:hover { background: rgba(201,168,76,0.04); }
+
+    .highlight-icon {
+      font-size: 1.2rem;
+      color: var(--gold);
+      margin-bottom: 14px;
+      opacity: 0.6;
+    }
+
+    .highlight-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 6px;
+    }
+
+    .highlight-sub {
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.7;
+    }
+
+    /* ── MINISTRY JOURNEY ── */
+    .journey-section {
+      background: var(--cream);
+    }
+
+    .timeline {
+      position: relative;
+      margin-top: 60px;
+      padding-left: 40px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(180deg, transparent, var(--gold) 10%, var(--gold) 90%, transparent);
+      opacity: 0.3;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 60px 50px;
+    }
+    .timeline-item:last-child { padding-bottom: 0; }
+
+    .timeline-dot {
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 4px rgba(201,168,76,0.15);
+    }
+
+    .timeline-place {
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 8px;
+    }
+
+    .timeline-item h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+
+    .timeline-item p {
+      font-size: 0.85rem;
+      line-height: 1.9;
+      color: var(--mid);
+      font-weight: 300;
+      max-width: 700px;
+    }
+
+    @media (max-width: 900px) {
+      .highlights-strip { grid-template-columns: repeat(2, 1fr); }
+      .highlight-item { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.1); }
+      .timeline { padding-left: 24px; }
+      .timeline-item { padding-left: 32px; }
+    }
+
     /* ── ABOUT ── */
     .about-section {
       background: var(--cream);
@@ -719,6 +833,7 @@
   <div class="logo">Worksword of God Church</div>
   <ul>
     <li><a href="#about">About</a></li>
+    <li><a href="#journey">Journey</a></li>
     <li><a href="#word">Word</a></li>
     <li><a href="#books">Books</a></li>
     <li><a href="#messages">Messages</a></li>
@@ -753,15 +868,84 @@
   <div class="section-wrapper">
     <div class="about-grid">
       <div class="about-image-wrap reveal">
-        <img src="pastor-placeholder.jpg" alt="Pastor Gabriel">
+        <img src="pastor-placeholder.jpg" alt="Pastor Gabriel Abimbola Adegboye">
       </div>
       <div class="about-text">
-        <div class="section-label reveal">About</div>
+        <div class="section-label reveal">Ministry Profile</div>
         <h2 class="section-title reveal">A Life Devoted<br>to <em style="font-family:'Cormorant Garamond',serif;font-style:italic;">Divine Purpose</em></h2>
         <div class="about-divider reveal"></div>
-        <p class="reveal">Pastor Gabriel Abimbola Adegboye is a visionary spiritual leader and Founder of Worksword of God Church. Called to preach, teach, and provide prophetic guidance, he has dedicated his life to inspiring individuals and communities toward spiritual growth, righteousness, and national transformation.</p>
-        <p class="reveal reveal-delay-1">He has ministered in several nations, empowered youth and women, and published books that inspire leadership, spirituality, and cultural identity. His teachings combine practical wisdom, prophetic insight, and encouragement for personal and national development.</p>
-        <p class="reveal reveal-delay-2">Through his church, Pastor Gabriel provides mentorship programs, community development initiatives, and a platform for believers to grow in faith and societal impact.</p>
+        <p class="reveal">Pastor Gabriel Abimbola Adegboye is the Presiding Head Pastor of Worksword of God Church and a passionate servant of God whose ministry has spanned decades of church planting, peace advocacy, and national assignment. His journey began in Warri, Delta State, where he was rooted in faith and first answered the call to plant a church — bringing the gospel to the heart of the Niger Delta.</p>
+        <p class="reveal reveal-delay-1">During the turbulent years of the Niger Delta crisis, Pastor Gabriel stood as a voice for peace, actively advocating for reconciliation among communities torn by conflict. He later received a divine leading to move to Ibadan, where he planted Worksword of God Church — a ministry built on the uncompromising teaching of God's Word. He has now received a fresh assignment to Lagos, where he continues his national calling.</p>
+        <p class="reveal reveal-delay-2">He is the Convener of the <strong>Save Nigeria Network</strong>, a platform dedicated to national peace, security, and reconciliation among all Nigerians. Through this vision, he has engaged leaders, communities, and believers across the nation, believing that spiritual solutions are the foundation of lasting peace.</p>
+        <p class="reveal reveal-delay-2">A thorough student of the Word, Pastor Gabriel has attended several Bible schools including <strong>WOFBI</strong>, <strong>Gethsemane Prayer School</strong>, <strong>International School of Ministry</strong>, and <strong>ECWA Theological Seminary</strong>. He is married to Pastor Rosemary Adegboye, and together they are blessed with children.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MINISTRY HIGHLIGHTS -->
+<section class="highlights-section">
+  <div class="highlights-strip">
+    <div class="highlight-item reveal">
+      <div class="highlight-icon">✦</div>
+      <div class="highlight-label">Church Planting</div>
+      <div class="highlight-sub">Warri &amp; Ibadan</div>
+    </div>
+    <div class="highlight-item reveal reveal-delay-1">
+      <div class="highlight-icon">✦</div>
+      <div class="highlight-label">Save Nigeria Network</div>
+      <div class="highlight-sub">Convener</div>
+    </div>
+    <div class="highlight-item reveal reveal-delay-2">
+      <div class="highlight-icon">✦</div>
+      <div class="highlight-label">Peace &amp; Reconciliation</div>
+      <div class="highlight-sub">National Assignment</div>
+    </div>
+    <div class="highlight-item reveal reveal-delay-3">
+      <div class="highlight-icon">✦</div>
+      <div class="highlight-label">Published Author</div>
+      <div class="highlight-sub">Multiple Books</div>
+    </div>
+  </div>
+</section>
+
+<!-- MINISTRY JOURNEY -->
+<section class="journey-section" id="journey">
+  <div class="section-wrapper">
+    <div class="section-label reveal">Ministry Journey</div>
+    <h2 class="section-title reveal">A Walk of<br><em style="font-family:'Cormorant Garamond',serif;font-style:italic;">Faith &amp; Purpose</em></h2>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-place">Warri, Delta State</div>
+          <h3>The Foundation</h3>
+          <p>Pastor Gabriel's ministry began in Warri, where he was rooted in faith and called to plant a church, bringing the gospel to the Niger Delta region. During the Niger Delta crisis, he rose as a bold advocate for peace and reconciliation among conflict-affected communities.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal reveal-delay-1">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-place">Ibadan, Oyo State</div>
+          <h3>Worksword of God Church</h3>
+          <p>Responding to a divine leading, Pastor Gabriel relocated to Ibadan where he planted Worksword of God Church — a ministry anchored on the uncompromising teaching of God's Word and the spiritual development of believers.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal reveal-delay-2">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-place">National</div>
+          <h3>Save Nigeria Network</h3>
+          <p>As Convener of the Save Nigeria Network, Pastor Gabriel took on a national assignment — championing peace, security, and reconciliation across Nigeria. His passion for the nation drives him to engage leaders and communities with the message of unity and divine guidance.</p>
+        </div>
+      </div>
+      <div class="timeline-item reveal reveal-delay-3">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-place">Lagos — Present</div>
+          <h3>A New Assignment</h3>
+          <p>Pastor Gabriel has received a fresh divine instruction to move to Lagos for further national assignment — continuing his mandate for peace, spiritual leadership, and the advancement of God's kingdom across Nigeria.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -775,7 +959,7 @@
     <blockquote class="word-quote reveal">
       "Many challenges facing our nation require spiritual guidance. Believers must embrace prayer, righteousness, and faith to see lasting transformation."
     </blockquote>
-    <p class="word-body reveal reveal-delay-1">Pastor Gabriel's prophetic messages provide divine insight for both individuals and the nation. He emphasizes spiritual solutions to societal challenges, the importance of righteous leadership, and living in God's favor.</p>
+    <p class="word-body reveal reveal-delay-1">Pastor Gabriel's prophetic messages provide divine insight for both individuals and the nation. He emphasizes spiritual solutions to societal challenges, the importance of righteous leadership, and living in God's favor. His passion for Nigeria is unwavering — God has used him repeatedly to speak peace into the heart of a nation in need of healing.</p>
   </div>
 </section>
 
@@ -785,16 +969,16 @@
     <div class="section-label reveal">Published Works</div>
     <h2 class="section-title reveal">Books &amp;<br>Publications</h2>
 
-    <div class="books-grid">
+    <div class="books-grid" style="grid-template-columns: repeat(2, 1fr); max-width: 900px;">
       <div class="book-card reveal">
         <img class="book-cover" src="africans-diaspora.jpg" alt="Africans in Diaspora">
         <div class="book-info">
-          <h3>Africans in Diaspora</h3>
+          <h3>Africans in Diaspora: Journey to Greatness</h3>
           <a class="book-link" href="https://a.co/d/085sFV73" target="_blank">Buy on Amazon &rarr;</a>
         </div>
       </div>
 
-      <div class="book-card reveal reveal-delay-2">
+      <div class="book-card reveal reveal-delay-1">
         <div style="width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,#1e1a14 0%,#2c2416 50%,#1e1a14 100%);display:flex;align-items:center;justify-content:center;padding:40px;">
           <div style="text-align:center;">
             <div style="font-size:3rem;color:var(--gold);opacity:0.3;font-family:'Cormorant Garamond',serif;line-height:1;">✦</div>
@@ -806,6 +990,21 @@
           <span class="book-soon">Coming Soon</span>
         </div>
       </div>
+
+      <div class="book-card reveal reveal-delay-2">
+        <div style="width:100%;aspect-ratio:3/4;background:linear-gradient(135deg,#2c1f0e 0%,#1e1a14 50%,#0f0c08 100%);display:flex;align-items:center;justify-content:center;padding:40px;">
+          <div style="text-align:center;">
+            <div style="font-size:3rem;color:var(--gold);opacity:0.3;font-family:'Cormorant Garamond',serif;line-height:1;">✦</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--gold-light);opacity:0.5;margin-top:16px;font-style:italic;line-height:1.4;">Anointing and<br>the Anointed</div>
+          </div>
+        </div>
+        <div class="book-info">
+          <h3>Anointing and the Anointed</h3>
+          <span class="book-soon">Available at Church</span>
+        </div>
+      </div>
+
+
     </div>
   </div>
 </section>
